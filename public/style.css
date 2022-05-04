@@ -1,24 +1,83 @@
+@import url('normalize.css');
+
+:root {
+  --bg-color-dark: #f2f1f6;
+  --bg-color-light: #ffffff;
+  --text-color-light: #86858a;
+  --text-color-dark: #000000;
+}
+
 body {
-  font-family: sans-serif;
-  margin: auto;
-  max-width: 1280px;
+  background-color: var(--bg-color-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-.navbar {
-  background-color: #313236;
-  border-radius: 2px;
-  max-width: 800px;
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  body {
+    max-width: 70ch;
+    margin-inline: auto;
+  }
 }
 
-.navbar a {
-  color: #aaa;
-  display: inline-block;
-  font-size: 15px;
-  padding: 10px;
-  text-decoration: none;
+body > * {
+  margin-inline: 1em;
 }
 
-.navbar a:hover {
-  color: #ffffff;
+h1 {
+  font-size: 1rem;
+  text-align: center;
 }
 
+section h2 {
+  color: var(--text-color-light);
+  font-size: 1rem;
+  font-variant: small-caps;
+}
+
+.buttons {
+  background-color: var(--bg-color-light);
+  border-radius: 1em;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: row;
+  gap: .5em;
+}
+
+.buttons button {
+  flex-grow: 1;
+  font-size: 2.5em;
+  background-color: var(--bg-color-dark);
+
+  border: none;
+  border-radius: .6em;
+}
+
+.buttons button:hover {
+  background-color: aliceblue !important;
+}
+
+.buttons button:focus-visible {
+  outline: 4px solid;
+  outline-offset: 2px;
+}
+
+#power-off {
+  background-color: hsl(0,100%,75%);
+}
+
+#power-on {
+  background-color: hsl(120,100%,75%);
+}
+
+.buttons select {
+  flex-grow: 1;
+  font-size: 2.5em;
+  background-color: var(--bg-color-dark);
+
+  border: none;
+  border-radius: .4em;
+}
