@@ -44,13 +44,12 @@ section h2 {
 
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: .5em;
 }
 
 .buttons button {
   flex-grow: 1;
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: var(--bg-color-dark);
 
   border: none;
@@ -76,7 +75,7 @@ section h2 {
 
 .buttons select {
   flex-grow: 1;
-  font-size: 2.5em;
+  font-size: 1.5em;
   background-color: var(--bg-color-dark);
 
   border: none;
