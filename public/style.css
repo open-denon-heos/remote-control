@@ -17,7 +17,7 @@ body {
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   body {
-    max-width: 70ch;
+    max-width: 60ch;
     margin-inline: auto;
   }
 }
@@ -41,6 +41,7 @@ section h2 {
   background-color: var(--bg-color-light);
   border-radius: 1em;
   padding: 1em;
+  height: 3em;
 
   display: flex;
   flex-direction: row;
