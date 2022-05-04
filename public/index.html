@@ -1,23 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
-    <title>Plain HTML site using GitLab Pages</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="https://pages.gitlab.io/plain-html/">Plain HTML Example</a>
-      <a href="https://gitlab.com/pages/plain-html/">Repository</a>
-      <a href="https://gitlab.com/pages/">Other Examples</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="GitLab Pages">
+  <title>HEOS Remote Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>HEOS Remote Control</h1>
+  <section>
+    <h2>Player</h2>
+    <div class="buttons">
+      <button id="previous">⏮︎</button>
+      <button id="stop">⏹︎</button>
+      <button id="play">⏵︎</button>
+      <button id="pause">⏸︎</button>
+      <button id="next">⏭︎</button>
     </div>
-
-    <h1>Hello World!</h1>
-
-    <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
-    </p>
-  </body>
+  </section>
+  <section>
+    <h2>Volume</h2>
+    <div class="buttons">
+      <button id="mute">🔇</button>
+      <button id="volume-up">🔊</button>
+      <button id="volume-down">🔉</button>
+    </div>
+  </section>
+  <section>
+    <h2>Presets</h2>
+    <div class="buttons">
+      <button id="preset-1">1</button>
+      <button id="preset-2">2</button>
+      <button id="preset-3">3</button>
+      <button id="preset-4">4</button>
+    </div>
+  </section>
+  <section>
+    <h2>Source</h2>
+    <div class="buttons">
+      <select name="source" id="source">
+        <optgroup label="Aux.">
+          <option value="aux-1">Single</option>
+          <option value="aux-2">In 1</option>
+          <option value="aux-3">In 2</option>
+          <option value="aux-4">In 3</option>
+        </optgroup>
+        <optgroup label="Line">
+          <option value="line-in-1">In 1</option>
+          <option value="line-in-2">In 2</option>
+          <option value="line-in-3">In 3</option>
+          <option value="line-in-4">In 4</option>
+        </optgroup>
+        <optgroup label="Coax">
+          <option value="coax-in-1">In 1</option>
+          <option value="coax-in-2">In 2</option>
+        </optgroup>
+        <optgroup label="Optical">
+          <option value="optical-in-1">In 1</option>
+          <option value="optical-in-2">In 2</option>
+        </optgroup>
+        <optgroup label="HDMI">
+          <option value="hdmi-in-1">In 1</option>
+          <option value="hdmi-in-2">In 2</option>
+          <option value="hdmi-in-3">In 3</option>
+          <option value="hdmi-in-4">In 4</option>
+        </optgroup>
+      </select>
+    </div>
+  </section>
+  <section>
+    <h2>Power</h2>
+    <div class="buttons">
+      <button id="power-on">⏻</button>
+      <button id="power-off">⏾</button>
+    </div>
+  </section>
+</body>
 </html>
 
