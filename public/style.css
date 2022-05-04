@@ -44,12 +44,13 @@ section h2 {
 
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: .5em;
 }
 
 .buttons button {
   flex-grow: 1;
-  font-size: 2.5em;
+  font-size: 2em;
   background-color: var(--bg-color-dark);
 
   border: none;
