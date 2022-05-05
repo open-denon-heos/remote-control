@@ -3,11 +3,17 @@
 document.getElementById("previous").addEventListener("click", () => {
   console.log("hello previous");
   // actually send a request
-  // (beware: you can only perform request to the same server)
-  // GET http://example.com/movies.json and then deserialize and print to console
-  fetch('http://example.com/movies.json')
+  // GET example and then deserialize and print to console
+  // See https://developer.mozilla.org/en-US/docs/Web/API/fetch
+  let options = {
+    method: "GET",
+    mode: "cors"
+  };
+  fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+      console.log("data received", data);
+    });
 });
 
 document.getElementById("play").addEventListener("click", () => {
