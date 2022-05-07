@@ -5,6 +5,17 @@
   --bg-color-light: #ffffff;
   --text-color-light: #86858a;
   --text-color-dark: #000000;
+  --border-color: #eaeaea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color-dark: #000000;
+    --bg-color-light: #1c1c1e;
+    --text-color-light: #636367;
+    --text-color-dark: #f6f6f8;
+    --border-color:   #2b2b2d;
+  }
 }
 
 body {
@@ -27,6 +38,7 @@ body > * {
 }
 
 h1 {
+  color: var(--text-color-light);
   font-size: 1rem;
   text-align: center;
 }
@@ -38,53 +50,75 @@ section h2 {
 }
 
 .buttons {
-  background-color: var(--bg-color-light);
-  border-radius: 1em;
-  padding: 1em;
+  padding-block: 1em;
   height: 3em;
 
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: .5em;
+
+  border-width: 2px;
+  border-top-style: solid;
+  border-color: var(--border-color);
 }
 
 .buttons button {
   flex-grow: 1;
+  flex-basis: calc(25% - .5em);
   font-size: 1.5em;
-  background-color: var(--bg-color-dark);
+  background-color: var(--bg-color-light);
 
-  border: none;
+  border: solid;
+  border-width: 2px;
   border-radius: .6em;
+  border-color: var(--border-color);
 }
 
 .buttons button:hover {
-  background-color: aliceblue !important;
+  background-color: deepskyblue !important;
 }
 
-.buttons button:focus-visible {
+.buttons button:focus-visible,
+.buttons select:focus-visible {
   outline: 4px solid;
   outline-offset: 2px;
-}
-
-#power-off {
-  background-color: hsl(0,100%,75%);
-}
-
-#power-on {
-  background-color: hsl(120,100%,75%);
+  outline-color: deepskyblue;
 }
 
 .buttons select {
   flex-grow: 1;
   font-size: 1.5em;
-  background-color: var(--bg-color-dark);
+  background-color: var(--bg-color-light);
+  color: var(--text-color-dark);
 
-  border: none;
-  border-radius: .4em;
+  border: solid;
+  border-width: 2px;
+  border-radius: .6em;
+  border-color: var(--border-color);
 
   padding-left: .5em;
 }
 
 .icon {
-  transform: translateY(10%);
+  color: var(--text-color-dark);
+  transform: translateY(10%) scale(1.1);
+}
+
+#power-off {
+  background-color: hsl(0,100%,65%);
+}
+
+#power-on {
+  background-color: hsl(120,100%,65%);
+}
+
+@media (prefers-color-scheme: dark) {
+  #power-off {
+    background-color: hsl(0,100%,35%);
+  }
+
+  #power-on {
+    background-color: hsl(120,100%,35%);
+  }
 }
