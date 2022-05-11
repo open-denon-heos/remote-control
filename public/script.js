@@ -62,8 +62,8 @@ document.getElementById("preset-4").addEventListener("click", () => {
 
 // Source section
 
-document.getElementById("source").addEventListener("change", () => {
-  let selected_source = document.getElementById("source").value;
+document.getElementById("source").addEventListener("change", (event) => {
+  const selected_source = event.target.value;
   console.log("hello source", selected_source);
 });
 
