@@ -47,20 +47,20 @@ section h2 {
   color: var(--text-color-light);
   font-size: 1rem;
   font-variant: small-caps;
+
+  border-width: 2px;
+  border-block-end-style: solid;
+  border-color: var(--border-color);
+  padding-block-end: 1em;
 }
 
 .buttons {
-  padding-block: 1em;
   height: 3em;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: .5em;
-
-  border-width: 2px;
-  border-top-style: solid;
-  border-color: var(--border-color);
 }
 
 .buttons button {
@@ -80,7 +80,8 @@ section h2 {
 }
 
 .buttons button:focus-visible,
-.buttons select:focus-visible {
+.buttons select:focus-visible,
+textarea:focus-visible {
   outline: 4px solid;
   outline-offset: 2px;
   outline-color: deepskyblue;
@@ -97,7 +98,7 @@ section h2 {
   border-radius: .6em;
   border-color: var(--border-color);
 
-  padding-left: .5em;
+  padding-inline-start: .5em;
 }
 
 .icon {
@@ -113,12 +114,45 @@ section h2 {
   background-color: hsl(120,100%,65%);
 }
 
+#manual-http-request {
+  font-family: monospace;
+
+  width: calc(100% - 1em);
+  height: 20ch;
+  border: none;
+  border-radius: .6em;
+  padding: .5em;
+  margin-block-end: 1em;
+
+  background-color: var(--bg-color-light);
+  color: var(--text-color-dark);
+}
+
+.response-status {
+  display: none;
+  color: var(--text-color-dark);
+  text-align: center;
+  font-weight: 600;
+  border-radius: .6em;
+  padding: .25em;
+
+  margin-block-end: .5em;
+}
+
+#manual-http-request-ok {
+  background-color: hsl(120,100%,65%);
+}
+
+#manual-http-request-ko {
+  background-color: hsl(0,100%,65%);
+}
+
 @media (prefers-color-scheme: dark) {
-  #power-off {
+  #power-off, #manual-http-request-ko {
     background-color: hsl(0,100%,35%);
   }
 
-  #power-on {
+  #power-on, #manual-http-request-ok {
     background-color: hsl(120,100%,35%);
   }
 }

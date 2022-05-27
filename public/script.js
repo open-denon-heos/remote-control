@@ -1,19 +1,17 @@
 // Player section
 
-document.getElementById("previous").addEventListener("click", () => {
+document.getElementById("previous").addEventListener("click", async () => {
   console.log("hello previous");
   // actually send a request
   // GET example and then deserialize and print to console
   // See https://developer.mozilla.org/en-US/docs/Web/API/fetch
-  let options = {
+  const options = {
     method: "GET",
     mode: "cors"
   };
-  fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options)
-    .then(response => response.json())
-    .then(data => {
-      console.log("data received", data);
-    });
+  const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
 document.getElementById("play").addEventListener("click", () => {
@@ -75,4 +73,31 @@ document.getElementById("power-on").addEventListener("click", () => {
 
 document.getElementById("power-off").addEventListener("click", () => {
   console.log("hello power off");
+});
+
+// Manual Http Request section
+document.getElementById("send-query").addEventListener("click", async () => {
+  console.log("hello send query");
+  const text = document.getElementById("manual-http-request").value;
+  console.log("should send text to the network", text);
+
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options);
+
+
+  // Select right span in the page
+  // And show it for a few seconds
+  let element;
+  if (response.status != 200) {
+    element = document.getElementById("manual-http-request-ko");
+  } else {
+    element = document.getElementById("manual-http-request-ok");
+  }
+  element.style["display"] = "block";
+  setTimeout(() => {
+    element.style["display"] = "none";
+  }, 3000);
 });
