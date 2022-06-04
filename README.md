@@ -8,10 +8,13 @@ This requires a back-end (currently in development) to be functional.
 
 ## Demo and Screenshots
 
-You can try the UI at https://jiehong.gitlab.io/heos_remote_control/ (not
+You can try the UI at https://open-denon-heos.github.io/remote-control/public/ (not
 connected to any back-end).
 
-Screenshots: TODO
+Screenshots:
+
+![Screenshot of the dark theme](./screenshots/light_theme.png "Light Theme")
+![Screenshot of the dark theme](./screenshots/dark_theme.png "Dark Theme")
 
 ## Local Dev
 
