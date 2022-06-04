@@ -24,5 +24,10 @@ You can try this UI with (assuming you have [simple-http-server](https://github.
 ```sh
 $ simple-http-server -i
 ```
+Alternatively you can use
+
+```sh
+$ python3 -m http.server
+```
 
 And then head over to http://0.0.0.0:8000
