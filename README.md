@@ -13,8 +13,9 @@ connected to any back-end).
 
 Screenshots:
 
-![Screenshot of the dark theme](./screenshots/light_theme.png "Light Theme")
-![Screenshot of the dark theme](./screenshots/dark_theme.png "Dark Theme")
+<img src="./screenshots/light_theme.png" alt="Screenshot of the light theme" title="Light Theme" width="300"/>
+
+<img src="./screenshots/dark_theme.png" alt="Screenshot of the dark theme" title="Dark Theme" width="300"/>
 
 ## Local Dev
 
