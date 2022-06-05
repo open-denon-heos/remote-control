@@ -2,77 +2,176 @@
 
 document.getElementById("previous").addEventListener("click", async () => {
   console.log("hello previous");
-  // actually send a request
-  // GET example and then deserialize and print to console
-  // See https://developer.mozilla.org/en-US/docs/Web/API/fetch
   const options = {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options);
+  const response = await fetch('http://localhost:5000/browse/play_previous', options);
   const data = await response.json();
   console.log("data received", data);
 });
 
-document.getElementById("play").addEventListener("click", () => {
+document.getElementById("play").addEventListener("click", async () => {
   console.log("hello play");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/player/set_play_state?state=play', options);
+  const data = await response.json();
+  console.log("data received", data);
+
 });
 
-document.getElementById("pause").addEventListener("click", () => {
+document.getElementById("pause").addEventListener("click", async () => {
   console.log("hello pause");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/player/set_play_state?state=pause', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("next").addEventListener("click", () => {
+document.getElementById("next").addEventListener("click",async () => {
   console.log("hello next");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/browse/play_next', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
 // Volume section
 
-document.getElementById("mute").addEventListener("click", () => {
+document.getElementById("mute").addEventListener("click", async () => {
   console.log("hello mute");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/player/toggle_mute', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("volume-down").addEventListener("click", () => {
+document.getElementById("volume-down").addEventListener("click", async () => {
   console.log("hello volume down");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/player/volume_down', options);
+  const data = await response.json();
+  console.log("data received", data);
+
 });
 
-document.getElementById("volume-up").addEventListener("click", () => {
+document.getElementById("volume-up").addEventListener("click", async () => {
   console.log("hello volume up");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/player/volume_up', options);
+  const data = await response.json();
+  console.log("data received", data);
+
 });
 
 // Presets section
 
-document.getElementById("preset-1").addEventListener("click", () => {
+document.getElementById("preset-1").addEventListener("click",async () => {
   console.log("hello preset 1");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/browse/play_preset?preset=1', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("preset-2").addEventListener("click", () => {
+document.getElementById("preset-2").addEventListener("click",async () => {
   console.log("hello preset 2");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/browse/play_preset?preset=2', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("preset-3").addEventListener("click", () => {
+document.getElementById("preset-3").addEventListener("click",async () => {
   console.log("hello preset 3");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/browse/play_preset?preset=3', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("preset-4").addEventListener("click", () => {
+document.getElementById("preset-4").addEventListener("click",async () => {
   console.log("hello preset 4");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/browse/play_preset?preset=10', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
 // Source section
 
-document.getElementById("source").addEventListener("change", (event) => {
+document.getElementById("source").addEventListener("change", async (event) => {
   const selected_source = event.target.value;
   console.log("hello source", selected_source);
+    const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  if (selected_source == "browse/play_queue") {
+    const response = await fetch('http://localhost:5000/browse/play_queue', options);
+    const data = await response.json();
+    console.log("data received", data);
+  }
+  else {
+    const response = await fetch('http://localhost:5000/browse/play_input?input=inputs/' +  selected_source, options);
+    const data = await response.json();
+    console.log("data received", data);
+  }
+
 });
 
 // Power section
 
-document.getElementById("power-on").addEventListener("click", () => {
+document.getElementById("power-on").addEventListener("click",async () => {
   console.log("hello power on");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/on', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
-document.getElementById("power-off").addEventListener("click", () => {
+document.getElementById("power-off").addEventListener("click",async () => {
   console.log("hello power off");
+  const options = {
+    method: "GET",
+    mode: "cors"
+  };
+  const response = await fetch('http://localhost:5000/off', options);
+  const data = await response.json();
+  console.log("data received", data);
 });
 
 // Manual Http Request section
@@ -85,8 +184,7 @@ document.getElementById("send-query").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris', options);
-
+  const response = await fetch('http://localhost:5000/' + text, options);
 
   // Select right span in the page
   // And show it for a few seconds
