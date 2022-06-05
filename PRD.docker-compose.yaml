@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  server:
+    image: scoulomb/heos-api-server:1.0.0
+    environment:
+      - CONF_PLAYER_NAME=Denon AVR-X2700H
+      - CONF_USER=fake@gmail.com
+      - CONF_PW=do-not-use-qwerty-as-your-password
+    network_mode: host
+  remote-control:
+    image: scoulomb/heos-remote-control:1.0.0
+    ports:
+      - 8000:80

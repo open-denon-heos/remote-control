@@ -1,0 +1,5 @@
+<Directory /home/scoulomb/heos/open-denon-heos/remote-control/public >
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
