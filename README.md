@@ -69,6 +69,10 @@ And then head over for instance to http://192.168.1.90:5000
 
 Here we documented how to deploy server on QNAP NAS: https://github.com/open-denon-heos/heos-api-server#run-on-qnap-nas
 
+<!--
+This prerequisite can also be filled by following [section](#run-remote-control-ui-and-server-production-image).
+--> 
+
 ### Suggestion: define A record pointing to your machine
 
 Example
