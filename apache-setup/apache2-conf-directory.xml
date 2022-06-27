@@ -1,0 +1,5 @@
+<Directory /path_to_repo/public >
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>

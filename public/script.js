@@ -6,7 +6,7 @@ document.getElementById("previous").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_previous', options);
+  const response = await fetch('/heos-api-server/browse/play_previous', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -17,7 +17,7 @@ document.getElementById("play").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/player/set_play_state?state=play', options);
+  const response = await fetch('/heos-api-server/player/set_play_state?state=play', options);
   const data = await response.json();
   console.log("data received", data);
 
@@ -29,7 +29,7 @@ document.getElementById("pause").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/player/set_play_state?state=pause', options);
+  const response = await fetch('/heos-api-server/player/set_play_state?state=pause', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -40,7 +40,7 @@ document.getElementById("next").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_next', options);
+  const response = await fetch('/heos-api-server/browse/play_next', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -53,7 +53,7 @@ document.getElementById("mute").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/player/toggle_mute', options);
+  const response = await fetch('/heos-api-server/player/toggle_mute', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -64,7 +64,7 @@ document.getElementById("volume-down").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/player/volume_down', options);
+  const response = await fetch('/heos-api-server/player/volume_down', options);
   const data = await response.json();
   console.log("data received", data);
 
@@ -76,7 +76,7 @@ document.getElementById("volume-up").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/player/volume_up', options);
+  const response = await fetch('/heos-api-server/player/volume_up', options);
   const data = await response.json();
   console.log("data received", data);
 
@@ -90,7 +90,7 @@ document.getElementById("preset-1").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_preset?preset=1', options);
+  const response = await fetch('/heos-api-server/browse/play_preset?preset=1', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -101,7 +101,7 @@ document.getElementById("preset-2").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_preset?preset=2', options);
+  const response = await fetch('/heos-api-server/browse/play_preset?preset=2', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -112,7 +112,7 @@ document.getElementById("preset-3").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_preset?preset=3', options);
+  const response = await fetch('/heos-api-server/browse/play_preset?preset=3', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -123,7 +123,7 @@ document.getElementById("preset-4").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/browse/play_preset?preset=10', options);
+  const response = await fetch('/heos-api-server/browse/play_preset?preset=10', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -138,12 +138,12 @@ document.getElementById("source").addEventListener("change", async (event) => {
     mode: "cors"
   };
   if (selected_source == "browse/play_queue") {
-    const response = await fetch('http://localhost:5000/browse/play_queue', options);
+    const response = await fetch('/heos-api-server/browse/play_queue', options);
     const data = await response.json();
     console.log("data received", data);
   }
   else {
-    const response = await fetch('http://localhost:5000/browse/play_input?input=inputs/' +  selected_source, options);
+    const response = await fetch('/heos-api-server/browse/play_input?input=inputs/' +  selected_source, options);
     const data = await response.json();
     console.log("data received", data);
   }
@@ -158,7 +158,7 @@ document.getElementById("power-on").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/on', options);
+  const response = await fetch('/heos-api-server/on', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -169,7 +169,7 @@ document.getElementById("power-off").addEventListener("click",async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/off', options);
+  const response = await fetch('/heos-api-server/off', options);
   const data = await response.json();
   console.log("data received", data);
 });
@@ -184,7 +184,7 @@ document.getElementById("send-query").addEventListener("click", async () => {
     method: "GET",
     mode: "cors"
   };
-  const response = await fetch('http://localhost:5000/' + text, options);
+  const response = await fetch('/heos-api-server/' + text, options);
 
   // Select right span in the page
   // And show it for a few seconds
