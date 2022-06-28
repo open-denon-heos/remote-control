@@ -17,6 +17,11 @@ parentdir="$(dirname "$curr_dir")" # https://stackoverflow.com/questions/8426058
 #### if caused issue: https://stackoverflow.com/questions/25396984/getting-clear-read-only-status-on-webstorm-8, run sudo chown -R $(whoami) remote-control/
 sudo chmod -R 755 $parentdir/public
 
+## Rewrite rule activation
+sudo a2enmod rewrite
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+
 ## Listen on port 8000
 
 if cat /etc/apache2/ports.conf | grep "Listen 8000";

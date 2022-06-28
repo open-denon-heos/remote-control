@@ -1,12 +1,6 @@
 # README
 
-In dev mode I recommend to deploy Apache with Docker, as described [in TOP README](../../README.md#deploy-apache-2-via-docker-recommended).
-<!--
-And use server on NAS
-
-See comment: This prerequisite can also be filled by following [section](#run-remote-control-ui-and-server-production-image).
-
--->
+In dev mode I recommend to deploy Apache with Docker [Compose](../../README.md#option-3-build-and-deploy-both-server-and-ui-via-compose).
 
 You can deploy a media server for test purpose as described here: https://github.com/open-denon-heos/upnp-media-server
 
@@ -30,6 +24,7 @@ When adding to queue content from 2 different UPNP server, note the 2 different 
 - Add to queue (PID is hardcoded, do fix in BE)
 - Redeliver and deploy
 - Document commands
+- REWRITE URL FIX REDIRECT ISSUE OSEF ON TOP
 
 ```shell
 http://127.0.0.1:5000/browse/get_music_sources
