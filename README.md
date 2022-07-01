@@ -124,6 +124,7 @@ What are the options available to us?
 
 - Options:
   - We could use a `custom bridge network` in the 2 container with automatic service discovery: not possible as API server need to be on host network for UPNP discovery
+  Also, if we can connect a container to several networks,  we can not connect container to a network of type `host` and `bridge` at the [same time](https://devops.stackexchange.com/questions/1410/connect-docker-container-to-both-host-and-internal-bridge-network)
   In [prerequsite](#prerequisites-deploy-api-server), note the compose file contains `host` network instruction.
   ````shell
   $ docker ps
