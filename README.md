@@ -153,6 +153,8 @@ Note on compose when no network specified (custom bridge, host...) at all, Compo
 
 Compose default behavior override Docker default behavior (`default Bridge`).
 
+Docker4windows has special DNS name: https://docs.docker.com/desktop/windows/networking/.
+
 </details>
 
 #### Option 1: deploy using volume
